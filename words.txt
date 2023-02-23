@@ -1,0 +1,10 @@
+rojo=red
+verde=green
+coche=car
+OSO=bear
+rosa=Pink
+hola=hi
+galleta=coockie
+rojo=red
+azul=blue
+oso=bear
