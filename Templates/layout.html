@@ -4,47 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    
+
     <title>Document</title>
+    <style>
+        body{
+            padding-top: 60px;
+        }
+        .tr-head{background-color: antiquewhite;}
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
 </head>
 <body>
-    <div class="navbar navbar navbar-inverse navbar-flexed-top">
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <a href="" class="brand">
-                    UTL-IDGS
-
-
+                    UTL - IDGS
                 </a>
                 <ul class="nav">
-                    <li>
+                    <li class="activate">
                         <a href="">
                             <i class="icon-home icon-white"></i>
-                            index
-                        </a></li>
-                    <li>
-                        <a href="">
-                        <i class="icon-user icon-white"></i>
-                        user
-                    </a></li>
-                    <li>
+                            INDEX
+                        </a>
+                    </li>
+                    <li class="activate">
                         <a href="">
                             <i class="icon-home icon-white"></i>
-                            alumnos
-                        </a></li>
-
+                            Usuarios
+                        </a>
+                    </li>
+                    <li class="activate">
+                        <a href="">
+                            <i class="icon-home icon-white"></i>
+                            Alumnos
+                        </a>
+                    </li>
                 </ul>
-
             </div>
-
         </div>
-
     </div>
-{% block content %}
 
-{% endblock %}
-    
+    <div class="container">
+        {%with messages = get_flashed_messages()%}
+            {%if messages %}
+                {%for message in messages%}
+                <div class = "alert alert-success">
+                    {{message}}
+                </div>
+                {%endfor%}
+            {%endif%}
+            
+            {% endwith %}
+
+        {% block content %}
+
+    {% endblock %}
+    </div>
+
 </body>
 </html>

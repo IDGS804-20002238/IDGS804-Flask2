@@ -2,30 +2,30 @@
 
 {% block content %}
 <center>
-    <h5>Valores</h5>
+    <!-- <h5>Valores</h5>
 
         {% for valor in valores %}
             <li>{{ valor }}</li>
-        {% endfor %}
+        {% endfor %} -->
 
     
-    <label class="form-group">Menor:</label>
-    <p class="fs-1">{{ minNum }}</p>
+    
 
     <hr class="my-5">
     <h5>Mayor</h5>
-    <p class="fs-1">{{ maxNum }}</p>
-
+    <p class="fs-1"> numero mayor: {{ maxNum }}</p>
+    <label class="form-group ">Menor:</label>
+    <p class="fs-1">numero menor: {{ minNum }}</p>
     <h5>Promedio</h5>
-    <p>{{ promedio }}</p>
+    <p> el promedio es: {{ promedio }}</p>
 
     <h5>Repetidos</h5>
-    <ul>
+
         {% for key, value in repetidos %}
         <li>
-            El número '{{ key }}' se repitió {{ value }}
+            El número '{{ key }}' se repitió {{ value }} veces
         </li>
         {% endfor %}
-    </ul>
+
 </center>
 {% endblock %}
