@@ -50,3 +50,16 @@ class LoginForm(Form):
     password = PasswordField('Contraseña',
     [validators.DataRequired('El campo es requerido'),
     validators.length(min =5, max = 10, message = 'Ingresa min 5 max 10')])
+
+class ResistenciaForm(FlaskForm):
+    opciones_banda = [("negro", "Negro"), ("marron", "Marrón"), ("rojo", "Rojo"), ("naranja", "Naranja"),
+                      ("amarillo", "Amarillo"), ("verde", "Verde"), ("azul", "Azul"), ("violeta", "Violeta"),
+                      ("gris", "Gris"), ("blanco", "Blanco")]
+
+    opciones_tolerancia = [("oro", "Oro"), ("plata", "Plata")]
+
+    banda1 = SelectField("Banda 1", choices=opciones_banda, validators=[DataRequired()])
+    banda2 = SelectField("Banda 2", choices=opciones_banda, validators=[DataRequired()])
+    banda3 = SelectField("Banda 3", choices=opciones_banda, validators=[DataRequired()])
+    tolerancia = RadioField("Tolerancia", choices=opciones_tolerancia, validators=[DataRequired()])
+    calcular = SubmitField("Calcular")
